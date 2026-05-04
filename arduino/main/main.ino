@@ -16,10 +16,10 @@ void loop() {
   // Sensor requer intervalo de leitura mínimo de 2 segundos
   delay(2000);
 
-  float humidade = dht.readHumidity();
+  float umidade = dht.readHumidity();
   float temperatura = dht.readTemperature();
 
-  if (isnan(humidade) || isnan(temperatura)) {
+  if (isnan(umidade) || isnan(temperatura)) {
     Serial.println(F("Falha na leitura do sensor DHT22"));
     return;
   }
@@ -38,6 +38,6 @@ void loop() {
   Serial.println(F("---UMIDADE E TEMPERATURA DO AMBIENTE---"));
   Serial.print(temperatura);
   Serial.print(F(" ºC | Umidade: "));
-  Serial.print(humidade);
+  Serial.print(umidade);
   Serial.println(" %");
 }
