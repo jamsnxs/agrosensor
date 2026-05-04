@@ -26,13 +26,13 @@ void loop() {
 
   unsigned int sensorValor = analogRead(SENSOR_PIN);
   // converte intervalo de 10 bits (0 a  1023) para porcentagem proporcional
-  unsigned int porcentagem = (sensorValor * 100UL) / 1023;
+  unsigned int umidadeSolo = (sensorValor * 100UL) / 1023;
   // Unsigned long (UL) é usado na multiplicação para prevenir estouro de inteiro
   // pois 1023 * 100 > 16 bits
 
   Serial.println(F("---UMIDADE DO SOLO---"));
   Serial.print(F("Output: "));
-  Serial.print(porcentagem);
+  Serial.print(umidadeSolo);
   Serial.println(F("%"));
 
   Serial.println(F("---UMIDADE E TEMPERATURA DO AMBIENTE---"));
