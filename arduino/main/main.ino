@@ -19,10 +19,10 @@ void loop() {
   float umidade = dht.readHumidity();
   float temperatura = dht.readTemperature();
 
-  if (isnan(umidade) || isnan(temperatura)) {
-    Serial.println(F("Falha na leitura do sensor DHT22"));
-    return;
-  }
+  // if (isnan(umidade) || isnan(temperatura)) {
+  //   Serial.println(F("Falha na leitura do sensor DHT22"));
+  //   return;
+  // }
 
   unsigned int sensorValor = analogRead(SENSOR_PIN);
   // converte intervalo de 10 bits (0 a  1023) para porcentagem proporcional
@@ -30,14 +30,9 @@ void loop() {
   // Unsigned long (UL) é usado na multiplicação para prevenir estouro de inteiro
   // pois 1023 * 100 > 16 bits
 
-  Serial.println(F("---UMIDADE DO SOLO---"));
-  Serial.print(F("Output: "));
   Serial.print(umidadeSolo);
-  Serial.println(F("%"));
-
-  Serial.println(F("---UMIDADE E TEMPERATURA DO AMBIENTE---"));
-  Serial.print(temperatura);
-  Serial.print(F(" ºC | Umidade: "));
+  Serial.print(",");
   Serial.print(umidade);
-  Serial.println(" %");
+  Serial.print(",");
+  Serial.println(temperatura);
 }
