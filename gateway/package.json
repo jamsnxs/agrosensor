@@ -1,0 +1,14 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "Sistema de gateway serial",
+  "type": "module",
+  "main": "serial-gateway.js",
+  "scripts": {
+    "start": "node serial-gateway.js"
+  },
+  "dependencies": {
+    "@serialport/parser-readline": "^13.0.0",
+    "serialport": "^13.0.0"
+  }
+}
